@@ -85,10 +85,14 @@ public class FractalExplorer {
     private class MListener extends MouseAdapter {
         @Override
         public void mouseClicked(MouseEvent e) {
-            double x = e.getX();
-            double y = e.getY();
+            int x = e.getX();
+            int y = e.getY();
+            double xCoord =
+                    mandelbrot.getCoord(range.x, range.x + range.width, displaySize, x);
+            double yCoord =
+                    mandelbrot.getCoord(range.y, range.y + range.height, displaySize, y);
             label.setText("(" + x + " ; " + y + ")");
-            mandelbrot.recenterAndZoomRange(range, x, y, 0.5);
+            mandelbrot.recenterAndZoomRange(range, xCoord, yCoord, 0.5);
             drawFractal();
         }
     }
