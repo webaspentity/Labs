@@ -4,7 +4,7 @@ package com.evseev;
 public class Palindrome {
 
 
-    public static void main(String[] args) {
+    public static void identify(String[] args) {
         for (int i = 0; i < args.length; i++) {
             String s = args[i];
             System.out.print(IsPalindrome(s) + " ");
@@ -14,7 +14,7 @@ public class Palindrome {
 
     /**Возвращает строку, символы которой идут в обратном порядке
     относительно входной строки*/
-    public static String ReverseString(String s) {
+    private static String ReverseString(String s) {
         StringBuilder sb = new StringBuilder();
 
         for (int i = s.length()-1; i >= 0; i--)
@@ -26,7 +26,7 @@ public class Palindrome {
 
     /** Возвращает true, если строка читается одинаково
     в прямом и обратном порядке, иначе возвращает false */
-    public static boolean IsPalindrome(String s) {
+    private static boolean IsPalindrome(String s) {
 
         return s.equals(ReverseString(s));
     }
